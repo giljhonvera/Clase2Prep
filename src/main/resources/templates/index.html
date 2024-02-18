@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>James Bond's Cars</title>
+</head>
+<body>
+	<table>
+	    <thead>
+	        <tr>
+	            <th> Color </th>
+	            <th> Doors </th>
+	            <th> Depth </th>
+	            <th> Gun </th>
+	            <th> Manufacturer </th>
+	        </tr>
+	    </thead>
+	    <tbody>
+			<tr th:unless="${cars}">
+	            <td colspan="5"> No Cars Available </td>
+	        </tr>
+	        <tr th:each="car:${cars}">
+	            <td><span th:text="${car.color}"> Color </span></td>
+	            <td><span th:text="${car.numberOfDoors}"> Doors </span></td>
+	            <td><span th:text="${car.currentSubmergeDepth}"> Depth </span></td>
+	            <td><span th:text="${car.isGunOnBoard}"> Gun </span></td>
+	            <td><span th:text="${car.MANUFACTURER}"> Manufacturer </span></td>	           
+	        </tr>
+	    </tbody>
+	</table>	
+</body>
+</html>
